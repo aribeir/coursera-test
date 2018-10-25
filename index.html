@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Antonio</title>
+<meta name="generator" content="WYSIWYG Web Builder 14 - http://www.wysiwygwebbuilder.com">
+<link href="font-awesome.min.css" rel="stylesheet">
+<link href="Projeto_Veterinaria.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+function Validatepage10_form()
+{
+   var regexp;
+   var Editbox2 = document.getElementById('Editbox2');
+   if (!(Editbox2.disabled || Editbox2.style.display === 'none' || Editbox2.style.visibility === 'hidden'))
+   {
+      if (Editbox2.value == "")
+      {
+         alert("Nome inválido...deve conter ao mínimo 1 dígito");
+         Editbox2.focus();
+         return false;
+      }
+      if (Editbox2.value.length < 1)
+      {
+         alert("Nome inválido...deve conter ao mínimo 1 dígito");
+         Editbox2.focus();
+         return false;
+      }
+   }
+   var Combobox1 = document.getElementById('Combobox1');
+   if (!(Combobox1.disabled ||
+         Combobox1.style.display === 'none' ||
+         Combobox1.style.visibility === 'hidden'))
+   {
+      if (Combobox1.selectedIndex < 0)
+      {
+         alert("Informe o tipo do animal");
+         Combobox1.focus();
+         return false;
+      }
+   }
+   var Combobox2 = document.getElementById('Combobox2');
+   if (!(Combobox2.disabled ||
+         Combobox2.style.display === 'none' ||
+         Combobox2.style.visibility === 'hidden'))
+   {
+      if (Combobox2.selectedIndex < 0)
+      {
+         alert("Informe o sexo");
+         Combobox2.focus();
+         return false;
+      }
+   }
+   var Combobox3 = document.getElementById('Combobox3');
+   if (!(Combobox3.disabled ||
+         Combobox3.style.display === 'none' ||
+         Combobox3.style.visibility === 'hidden'))
+   {
+      if (Combobox3.selectedIndex < 0)
+      {
+         alert("Informe a raça do animal");
+         Combobox3.focus();
+         return false;
+      }
+   }
+   var Editbox1 = document.getElementById('Editbox1');
+   if (!(Editbox1.disabled || Editbox1.style.display === 'none' || Editbox1.style.visibility === 'hidden'))
+   {
+      if (Editbox1.value == "")
+      {
+         alert("Informe a data de nascimento do animal");
+         Editbox1.focus();
+         return false;
+      }
+   }
+   var Combobox4 = document.getElementById('Combobox4');
+   if (!(Combobox4.disabled ||
+         Combobox4.style.display === 'none' ||
+         Combobox4.style.visibility === 'hidden'))
+   {
+      if (Combobox4.selectedIndex < 0)
+      {
+         alert("Informe o temperamento do animal");
+         Combobox4.focus();
+         return false;
+      }
+   }
+   var Editbox3 = document.getElementById('Editbox3');
+   if (!(Editbox3.disabled || Editbox3.style.display === 'none' || Editbox3.style.visibility === 'hidden'))
+   {
+      if (Editbox3.value == "")
+      {
+         alert("Informe o CPF do dono do animal");
+         Editbox3.focus();
+         return false;
+      }
+   }
+   return true;
+}
+</script>
+<script src="wwb14.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("#FileUpload1 :file").on('change', function()
+   {
+      var input = $(this).parents('.input-group').find(':text');
+      input.val($(this).val());
+   });
+});
+</script>
+</head>
+<body>
+<div id="container">
+<div id="wb_Image1" style="position:absolute;left:0px;top:5px;width:1279px;height:838px;z-index:19;">
+<img src="images/cao_gato_01.png" id="Image1" alt=""></div>
+
+<div id="wb_Text1" style="position:absolute;left:0px;top:5px;width:1324px;height:74px;text-align:center;z-index:21;">
+<span style="color:#0000FF;font-family:'Comic Sans MS';font-size:53px;"><strong>B</strong></span><span style="color:#FF0000;font-family:'Comic Sans MS';font-size:53px;"><strong>i</strong></span><span style="color:#0000FF;font-family:'Comic Sans MS';font-size:53px;"><strong>ch</strong></span><span style="color:#FF0000;font-family:'Comic Sans MS';font-size:53px;"><strong>o</strong></span><span style="color:#0000FF;font-family:'Comic Sans MS';font-size:53px;"><strong>s e M</strong></span><span style="color:#FF0000;font-family:'Comic Sans MS';font-size:53px;"><strong>i</strong></span><span style="color:#0000FF;font-family:'Comic Sans MS';font-size:53px;"><strong>m</strong></span><span style="color:#FF0000;font-family:'Comic Sans MS';font-size:53px;"><strong>o</strong></span><span style="color:#0000FF;font-family:'Comic Sans MS';font-size:53px;"><strong>s</strong></span></div>
+<div id="wb_Form1" style="position:absolute;left:74px;top:770px;width:141px;height:60px;z-index:22;">
+<form name="xxx" method="post" action="mailto:yourname@mail.com" enctype="text/plain" id="Form1">
+</form>
+</div>
+<div id="wb_Form2" style="position:absolute;left:194px;top:168px;width:642px;height:307px;z-index:23;">
+<?php include("./php/Class_Animal.php"); ?>
+<?php include("./php/Class_Gerais.php"); ?>
+<?php include("./php/trata_form_incl_animal.php"); ?>
+
+<form name="page10_form" method="post" action="<?php echo( htmlspecialchars($_SERVER["PHP_SELF"]));?>" enctype="multipart/form-data" accept-charset="UTF-8" id="Form2" onsubmit="return Validatepage10_form()">
+<input type="text" id="Editbox2" style="position:absolute;left:81px;top:24px;width:184px;height:16px;z-index:0;" name="fnome_ani" value="<?php echo($wnome_ani); ?>" tabindex="1" spellcheck="false" accesskey="1" title="Informe o nome do animal">
+<label for="" id="Label2" style="position:absolute;left:12px;top:24px;width:61px;height:16px;line-height:16px;z-index:1;">Nome</label>
+<input type="reset" id="Button2" onclick="window.location.href='./page5.html';return false;" name="" value="Cancelar" style="position:absolute;left:153px;top:253px;width:96px;height:25px;z-index:2;" tabindex="10" title="Cancelar o cadastramento">
+<label for="" id="Label3" style="position:absolute;left:12px;top:127px;width:42px;height:16px;line-height:16px;z-index:3;">Foto:</label>
+<div id="FileUpload1" class="input-group" style="position:absolute;left:81px;top:126px;width:236px;height:26px;z-index:4;">
+<input class="form-control" type="text" readonly="" tabindex="6" title="Infome o diret&#243;rio da foto do animal">
+<label class="input-group-btn">
+<input type="file" name="ffoto" id="FileUpload1-file" style="display:none;"><span class="btn">Browse...</span>
+</label>
+</div>
+<input type="text" id="Editbox11" style="position:absolute;left:12px;top:215px;width:607px;height:16px;z-index:5;" name="fmensagem_cli" value="<?php echo($wmensagem); ?>" readonly disabled autocomplete="off" spellcheck="false">
+<label for="" id="Label1" style="position:absolute;left:279px;top:24px;width:57px;height:16px;line-height:16px;z-index:6;">Tipo ani.:</label>
+<select name="ftipo_ani" size="1" id="Combobox1" style="position:absolute;left:344px;top:22px;width:131px;height:28px;z-index:7;" tabindex="2" <?php include("./php/carrega_tipo_animal.php"); ?>>
+</select>
+<label for="" id="Label4" style="position:absolute;left:492px;top:24px;width:37px;height:16px;line-height:16px;z-index:8;">Sexo:</label>
+<select name="fsexo_ani" size="1" id="Combobox2" style="position:absolute;left:538px;top:22px;width:91px;height:28px;z-index:9;" tabindex="3">
+<option selected value="F">Fêmea</option>
+<option value="M">Macho</option>
+</select>
+<input type="submit" id="Button1" name="" value="Submit" style="position:absolute;left:12px;top:254px;width:96px;height:25px;z-index:10;" tabindex="9" title="Submeter o formul&#225;rio">
+<label for="" id="Label5" style="position:absolute;left:12px;top:77px;width:36px;height:16px;line-height:16px;z-index:11;">Raça:</label>
+<select name="fraca_ani" size="1" id="Combobox3" style="position:absolute;left:82px;top:74px;width:165px;height:28px;z-index:12;" tabindex="4" <?php include("./php/carrega_raca.php"); ?>>
+</select>
+<label for="" id="Label6" style="position:absolute;left:366px;top:77px;width:77px;height:16px;line-height:16px;z-index:13;">Dt nasc ani.:</label>
+<input type="date" id="Editbox1" style="position:absolute;left:459px;top:75px;width:160px;height:16px;z-index:14;" name="fdt_nasc_ani" value="" tabindex="5" spellcheck="false">
+<label for="" id="Label7" style="position:absolute;left:343px;top:127px;width:92px;height:16px;line-height:16px;z-index:15;">Temperamento:</label>
+<select name="ftemp_ani" size="1" id="Combobox4" style="position:absolute;left:448px;top:125px;width:181px;height:28px;z-index:16;" tabindex="7" <?php include("./php/carrega_temperamento_ani.php"); ?>>
+</select>
+<label for="" id="Label8" style="position:absolute;left:12px;top:179px;width:64px;height:16px;line-height:16px;z-index:17;">CPF dono:</label>
+<input type="text" id="Editbox3" style="position:absolute;left:81px;top:178px;width:165px;height:17px;z-index:18;" name="fcpf_dono_ani" value="<?php echo($wcpf_dono_ani); ?>" tabindex="8" spellcheck="false">
+</form>
+</div>
+<div id="wb_ResponsiveMenu1" style="position:absolute;left:0px;top:79px;width:1332px;height:69px;z-index:24;">
+<label class="toggle" for="ResponsiveMenu1-submenu" id="ResponsiveMenu1-title">Menu<span id="ResponsiveMenu1-icon"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></span></label>
+<input type="checkbox" id="ResponsiveMenu1-submenu">
+<ul class="ResponsiveMenu1" id="ResponsiveMenu1" role="menu">
+<li><a role="menuitem" href="./page5.html"><i class="fa fa-home fa-2x">&nbsp;</i><br>Home</a></li>
+<li><a role="menuitem" href="./page6.html"><i class="fa fa-child fa-2x">&nbsp;</i><br>Sobre&nbsp;n&#243;s</a></li>
+<li>
+<label for="ResponsiveMenu1-submenu-0" class="toggle"><i class="fa fa-calendar-check-o fa-2x">&nbsp;</i>Agendamentos<b class="arrow-down"></b></label>
+<a role="menuitem" href="#" onblur="ShowObject('wb_ResponsiveMenu1', 1);return false;"><i class="fa fa-calendar-check-o fa-2x">&nbsp;</i><br>Agendamentos<b class="arrow-down"></b></a>
+<input type="checkbox" id="ResponsiveMenu1-submenu-0">
+<ul role="menu">
+<li><a role="menuitem" href="#"><i class="fa fa-eyedropper fa-2x">&nbsp;</i>Consultas</a></li>
+<li><a role="menuitem" href="#"><i class="fa fa-shower fa-2x">&nbsp;</i>Banho</a></li>
+<li><a role="menuitem" href="#"><i class="fa fa-cut fa-2x">&nbsp;</i>Tosa</a></li>
+</ul>
+</li>
+<li><a role="menuitem" href="#"><i class="fa fa-check-square-o fa-2x">&nbsp;</i><br>Status&nbsp;do&nbsp;agendamento</a></li>
+<li>
+<label for="ResponsiveMenu1-submenu-1" class="toggle"><i class="fa fa-user fa-2x">&nbsp;</i>Cadastre-se<b class="arrow-down"></b></label>
+<a role="menuitem" href="#"><i class="fa fa-user fa-2x">&nbsp;</i><br>Cadastre-se<b class="arrow-down"></b></a>
+<input type="checkbox" id="ResponsiveMenu1-submenu-1">
+<ul role="menu">
+<li><a role="menuitem" href="./page8.html" onclick="window.location.href='./page8.html';return false;"><i class="fa fa-user fa-2x">&nbsp;</i>Cliente</a></li>
+<li><a role="menuitem" href="#"><i class="fa fa-paw fa-2x">&nbsp;</i>Animal</a></li>
+</ul>
+</li>
+<li><a role="menuitem" href="./page9.html"><i class="fa fa-user-secret fa-2x">&nbsp;</i><br>Login</a></li>
+<li><a role="menuitem" href="./page7.html"><i class="fa fa-map-marker fa-2x">&nbsp;</i><br>Contato&nbsp;e&nbsp;Localiza&#231;&#227;o</a></li>
+<li><a role="menuitem" href="#" onclick="window.print();return false;"><i class="fa fa-print fa-2x">&nbsp;</i><br>imprimir</a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>
